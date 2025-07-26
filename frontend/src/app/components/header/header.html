@@ -1,0 +1,16 @@
+<header [style.background-color]="headerData.color" class="header">
+    <div class="w-full flex">
+        <img [src]="headerData.logoImage" alt="لوگو" class="logo" />
+        <div class="titles">
+            <h1>{{ headerData.title }}</h1>
+            <p>{{ headerData.englishTitle }} - تأسیس {{ headerData.established }}</p>
+        </div>
+        <nav>
+            <ul>
+                <li *ngFor="let link of headerData.navLinks">
+                    <a [routerLink]="link.href">{{ link.title }}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
