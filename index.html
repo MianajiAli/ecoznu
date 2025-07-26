@@ -2,381 +2,113 @@
 <html lang="fa" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>انجمن علمی اقتصاد</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-blue: #1a4b8c;
-            --secondary-blue: #2a6fc9;
-            --light-blue: #e6f0fa;
-            --dark-blue: #0d2b4e;
-        }
-
         body {
-            font-family: Vazir, sans-serif;
-            background-color: #f8f9fa;
-            line-height: 1.8;
-        }
-
-        .header {
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            color: white;
-            padding: 1.5rem 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-img {
-            height: 60px;
-            width: auto;
-        }
-
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        .english-name {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-top: 5px;
-        }
-
-        .navbar-custom {
-            background-color: var(--dark-blue) !important;
-        }
-
-        .hero-section {
-            background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            padding: 5rem 0;
-            position: relative;
-            color: white;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 40, 85, 0.7);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-title {
-            color: var(--primary-blue);
-            border-right: 4px solid var(--secondary-blue);
-            padding-right: 15px;
-            margin: 2rem 0 1.5rem;
-            font-weight: 700;
-        }
-
-        .card-custom {
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
-            border-top: 3px solid var(--secondary-blue);
-        }
-
-        .card-custom:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .news-ticker {
-            background-color: var(--light-blue);
-            padding: 10px 0;
-            border-top: 1px solid #d1e3f6;
-            border-bottom: 1px solid #d1e3f6;
-        }
-
-        .membership-cta {
-            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
-            color: white;
-            padding: 3rem 0;
-            margin: 3rem 0;
-            border-radius: 8px;
-        }
-
-        footer {
-            background-color: var(--dark-blue);
-            color: white;
-            padding: 3rem 0 1.5rem;
-        }
-
-        .social-icon {
-            font-size: 1.5rem;
-            margin-left: 1rem;
-            color: white;
-            transition: all 0.3s;
-        }
-
-        .social-icon:hover {
-            color: #a3c6f0;
-        }
-
-        .quick-links a {
-            color: #c2d6f0;
-            display: block;
-            margin-bottom: 8px;
-            text-decoration: none;
-        }
-
-        .quick-links a:hover {
-            color: white;
+            font-family: 'Vazirmatn', sans-serif;
         }
     </style>
 </head>
 
-<body>
-    <!-- Header with Logo -->
-    <header class="header">
-        <div class="container">
-            <div class="logo-container">
-                <img src="logo.png" alt="انجمن علمی اقتصاد" class="logo-img">
-                <div>
-                    <div class="logo-text">انجمن علمی اقتصاد</div>
-                    <div class="english-name">Scientific Economics Association</div>
-                </div>
-            </div>
-        </div>
+<body class="bg-gray-50 text-gray-800">
+    <header class="bg-emerald-700 text-white py-6 text-center">
+        <h1 id="assoc-name" class="text-3xl font-bold"></h1>
+        <p id="assoc-en-name" class="text-sm mt-2"></p>
     </header>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">خانه</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">درباره انجمن</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">اعضا</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">مقالات</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">رویدادها</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">تماس با ما</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- News Ticker -->
-    <div class="news-ticker">
-        <div class="container">
-            <div class="d-flex align-items-center">
-                <span class="bg-primary text-white px-2 py-1 rounded ms-3">اخبار</span>
-                <marquee behavior="scroll" direction="right">
-                    ثبت نام همایش اقتصاد دیجیتال تا 15 مرداد تمدید شد | انتشار جدیدترین شماره فصلنامه علمی انجمن |
-                    برگزاری کارگاه روش تحقیق پیشرفته در تاریخ 1403/05/20
-                </marquee>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container hero-content">
-            <div class="row">
-                <div class="col-md-8">
-                    <h1 class="display-5 fw-bold mb-4">پلتفرم تخصصی اقتصاد ایران</h1>
-                    <p class="lead mb-4">انجمن علمی اقتصاد با هدف پیشبرد دانش اقتصادی و ایجاد شبکه‌ای از متخصصان اقتصاد
-                        فعالیت می‌کند. ما با برگزاری رویدادهای تخصصی، انتشار مقالات و ایجاد ارتباط بین دانشگاه و صنعت در
-                        خدمت جامعه اقتصادی کشور هستیم.</p>
-                    <a href="#" class="btn btn-light btn-lg px-4 me-2">عضویت در انجمن</a>
-                    <a href="#" class="btn btn-outline-light btn-lg px-4">آخرین رویدادها</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <div class="container my-5">
-        <!-- About Section -->
+    <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
         <section>
-            <h2 class="section-title">درباره انجمن</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>انجمن علمی اقتصاد در سال 1385 با مجوز وزارت علوم تأسیس شد و از آن زمان تاکنون به عنوان یکی از
-                        نهادهای پیشرو در حوزه اقتصاد ایران فعالیت داشته است. این انجمن با همکاری اساتید برجسته و متخصصان
-                        اقتصادی کشور، به تولید و ترویج دانش اقتصادی می‌پردازد.</p>
-                </div>
-                <div class="col-md-6">
-                    <p>اهداف اصلی انجمن شامل توسعه پژوهش‌های کاربردی در حوزه اقتصاد، ایجاد پل ارتباطی بین دانشگاه و
-                        صنعت، حمایت از پژوهشگران جوان و برگزاری رویدادهای تخصصی برای ارتقای سطح دانش اقتصادی در کشور
-                        می‌باشد.</p>
-                </div>
-            </div>
+            <h2 class="text-xl font-semibold mb-4">درباره انجمن</h2>
+            <p id="description" class="mb-2"></p>
+            <p id="mission"></p>
         </section>
 
-        <!-- Activities Section -->
-        <section class="my-5">
-            <h2 class="section-title">فعالیت‌های اخیر</h2>
-            <div class="row" id="recent-activities">
-                <div class="col-md-4">
-                    <div class="card card-custom h-100">
-                        <div class="card-body">
-                            <h3 class="h5 card-title text-primary">همایش اقتصاد ایران 1403</h3>
-                            <p class="text-muted small">1403/04/15</p>
-                            <p class="card-text">بررسی تحولات اقتصادی ایران در سال جاری با حضور اساتید برجسته و مسئولان
-                                اقتصادی کشور</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-custom h-100">
-                        <div class="card-body">
-                            <h3 class="h5 card-title text-primary">کارگاه روش تحقیق</h3>
-                            <p class="text-muted small">1403/02/30</p>
-                            <p class="card-text">آموزش روش‌های پیشرفته تحلیل داده‌های اقتصادی با نرم‌افزارهای تخصصی</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card card-custom h-100">
-                        <div class="card-body">
-                            <h3 class="h5 card-title text-primary">نشست تخصصی</h3>
-                            <p class="text-muted small">1403/03/10</p>
-                            <p class="card-text">بررسی تأثیر تحریم‌ها بر بازار سرمایه ایران با حضور کارشناسان مالی</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section>
+            <h2 class="text-xl font-semibold mb-4">فعالیت‌های اخیر</h2>
+            <div id="recent-activities" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
         </section>
 
-        <!-- Membership CTA -->
-        <section class="membership-cta text-center">
-            <div class="container">
-                <h2 class="mb-4">به جمع متخصصان اقتصاد بپیوندید</h2>
-                <p class="mb-4">با عضویت در انجمن علمی اقتصاد از مزایای زیر بهره‌مند شوید:</p>
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <div class="bg-white text-dark p-3 rounded">
-                                    <i class="bi bi-journal-text fs-2 text-primary mb-2"></i>
-                                    <p>دسترسی به مقالات تخصصی</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <div class="bg-white text-dark p-3 rounded">
-                                    <i class="bi bi-people fs-2 text-primary mb-2"></i>
-                                    <p>شبکه‌سازی با متخصصان</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <div class="bg-white text-dark p-3 rounded">
-                                    <i class="bi bi-ticket-perforated fs-2 text-primary mb-2"></i>
-                                    <p>تخفیف در رویدادها</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#" class="btn btn-light btn-lg mt-4 px-4">فرم عضویت</a>
-            </div>
+        <section>
+            <h2 class="text-xl font-semibold mb-4">رویدادهای آینده</h2>
+            <div id="upcoming-events" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
         </section>
 
-        <!-- Upcoming Events -->
-        <section class="my-5">
-            <h2 class="section-title">رویدادهای پیش رو</h2>
-            <div class="row" id="upcoming-events">
-                <div class="col-md-6">
-                    <div class="card card-custom h-100">
-                        <div class="card-body">
-                            <h3 class="h5 card-title text-primary">سمینار سیاست‌های پولی</h3>
-                            <p class="text-muted small">1403/05/10 - ساعت 16:00</p>
-                            <p class="card-text">بررسی آخرین تحولات سیاست‌گذاری پولی بانک مرکزی با سخنرانی دکتر احمدی
-                            </p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">ثبت نام</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card card-custom h-100">
-                        <div class="card-body">
-                            <h3 class="h5 card-title text-primary">مسابقه مقاله‌نویسی</h3>
-                            <p class="text-muted small">مهلت ثبت نام: 1403/05/30</p>
-                            <p class="card-text">مسابقه سالانه مقاله‌نویسی با موضوع "چالش‌های اقتصادی ایران در دهه
-                                آینده"</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">جزئیات بیشتر</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section>
+            <h2 class="text-xl font-semibold mb-4">اعضای انجمن</h2>
+            <div id="members" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
         </section>
-    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h4 class="mb-3">تماس با ما</h4>
-                    <p><i class="bi bi-geo-alt-fill me-2"></i> تهران، خیابان انقلاب، دانشگاه تهران، دانشکده اقتصاد</p>
-                    <p><i class="bi bi-envelope-fill me-2"></i> info@economics-association.ir</p>
-                    <p><i class="bi bi-telephone-fill me-2"></i> 021-12345678</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h4 class="mb-3">لینک‌های سریع</h4>
-                    <div class="quick-links">
-                        <a href="#"><i class="bi bi-chevron-left"></i> اخبار و اطلاعیه‌ها</a>
-                        <a href="#"><i class="bi bi-chevron-left"></i> انتشارات انجمن</a>
-                        <a href="#"><i class="bi bi-chevron-left"></i> اعضای هیئت علمی</a>
-                        <a href="#"><i class="bi bi-chevron-left"></i> آرشیو همایش‌ها</a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h4 class="mb-3">شبکه‌های اجتماعی</h4>
-                    <div class="mb-3">
-                        <a href="#" class="social-icon"><i class="bi bi-telegram"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
-                    </div>
-                    <div class="mt-4">
-                        <img src="logo.png" alt="انجمن علمی اقتصاد" style="height: 60px; opacity: 0.8;">
-                    </div>
-                </div>
-            </div>
-            <hr class="mt-0 mb-4" style="border-color: rgba(255,255,255,0.1);">
-            <div class="text-center">
-                <p class="small">© 1403 کلیه حقوق برای انجمن علمی اقتصاد محفوظ است.</p>
-            </div>
-        </div>
+        <section>
+            <h2 class="text-xl font-semibold mb-4">راه‌های ارتباطی</h2>
+            <p><strong>آدرس:</strong> <span id="address"></span></p>
+            <p><strong>ایمیل:</strong> <span id="email"></span></p>
+            <p><strong>تلفن:</strong> <span id="phone"></span></p>
+        </section>
+
+        <section>
+            <h2 class="text-xl font-semibold mb-4">شبکه‌های اجتماعی</h2>
+            <ul id="social-links" class="list-disc pr-5 space-y-1">
+                <li><a id="telegram" class="text-blue-600 hover:underline" target="_blank">تلگرام</a></li>
+                <li><a id="instagram" class="text-pink-600 hover:underline" target="_blank">اینستاگرام</a></li>
+                <li><a id="twitter" class="text-blue-400 hover:underline" target="_blank">توییتر</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-gray-200 text-center text-sm py-4 mt-10">
+        <p>© 2025 انجمن علمی اقتصاد - دانشگاه زنجان</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.min.js"></script>
+    <script>
+        fetch("data.json")
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("assoc-name").textContent = data.associationName;
+                document.getElementById("assoc-en-name").textContent = data.englishName;
+                document.getElementById("description").textContent = data.description;
+                document.getElementById("mission").textContent = data.mission;
+
+                const recentContainer = document.getElementById("recent-activities");
+                data.recentActivities.forEach(act => {
+                    const div = document.createElement("div");
+                    div.className = "bg-white p-4 rounded shadow";
+                    div.innerHTML = `<h3 class='font-bold text-lg mb-1'>${act.title}</h3><p class='text-sm text-gray-600'>${act.date}</p><p>${act.description}</p>`;
+                    recentContainer.appendChild(div);
+                });
+
+                const upcomingContainer = document.getElementById("upcoming-events");
+                data.upcomingEvents.forEach(evt => {
+                    const div = document.createElement("div");
+                    div.className = "bg-white p-4 rounded shadow";
+                    let content = `<h3 class='font-bold text-lg mb-1'>${evt.title}</h3>`;
+                    if (evt.date) content += `<p class='text-sm text-gray-600'>${evt.date}</p>`;
+                    if (evt.speaker) content += `<p>سخنران: ${evt.speaker}</p>`;
+                    if (evt.deadline) content += `<p>مهلت: ${evt.deadline}</p>`;
+                    div.innerHTML = content;
+                    upcomingContainer.appendChild(div);
+                });
+
+                const membersContainer = document.getElementById("members");
+                data.members.forEach(member => {
+                    const div = document.createElement("div");
+                    div.className = "bg-white p-4 rounded shadow text-center";
+                    div.innerHTML = `<p class='font-semibold text-emerald-700'>${member.role}</p><p class='mt-1'>${member.name}</p>`;
+                    membersContainer.appendChild(div);
+                });
+
+                document.getElementById("address").textContent = data.contact.address;
+                document.getElementById("email").textContent = data.contact.email;
+                document.getElementById("phone").textContent = data.contact.phone;
+
+                document.getElementById("telegram").href = data.socialMedia.telegram;
+                document.getElementById("instagram").href = data.socialMedia.instagram;
+                document.getElementById("twitter").href = data.socialMedia.twitter;
+            });
+    </script>
 </body>
 
 </html>
