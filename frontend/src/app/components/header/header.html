@@ -1,16 +1,27 @@
-<header [style.background-color]="headerData.color" class="header">
-    <div class="w-full flex">
-        <img [src]="headerData.logoImage" alt="لوگو" class="logo" />
-        <div class="titles">
-            <h1>{{ headerData.title }}</h1>
-            <p>{{ headerData.englishTitle }} - تأسیس {{ headerData.established }}</p>
+<header [style.background-color]="headerData.color" class="py-4">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+
+        <!-- Logo and Title Section -->
+        <div class="flex items-center gap-4">
+            <img [src]="headerData.logoImage" alt="لوگو" class="w-12 h-12 md:w-16 md:h-16" />
+            <div class="text-white">
+                <h1 class="text-xl md:text-2xl font-bold">{{ headerData.title }}</h1>
+                <p class="text-sm md:text-base opacity-80">
+                    {{ headerData.englishTitle }} - تأسیس {{ headerData.established }}
+                </p>
+            </div>
         </div>
+
+        <!-- Navigation -->
         <nav>
-            <ul>
+            <ul class="flex flex-wrap items-center gap-4 text-white text-sm md:text-base">
                 <li *ngFor="let link of headerData.navLinks">
-                    <a [routerLink]="link.href">{{ link.title }}</a>
+                    <a [routerLink]="link.href" class="hover:underline hover:text-gray-200 transition">
+                        {{ link.title }}
+                    </a>
                 </li>
             </ul>
         </nav>
+
     </div>
 </header>

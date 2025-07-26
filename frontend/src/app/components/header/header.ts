@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink],
+  imports: [RouterLink,CommonModule],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
@@ -13,7 +14,7 @@ headerData = {
     color: "#1E40AF",
     logoImage: "/logo.png",
     englishTitle: "Scientific Economics Association",
-    established: "۱۳۹۵",
+    established: "1401",
     navLinks: [
       { title: "صفحه اصلی", href: "/" },
       { title: "درباره ما", href: "/about" },
