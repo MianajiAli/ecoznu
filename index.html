@@ -6,107 +6,321 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>انجمن علمی اقتصاد</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Vazirmatn', sans-serif;
+        }
+
+        .activity-card:hover,
+        .event-card:hover,
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
         }
     </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
-    <header class="bg-emerald-700 text-white py-6 text-center">
-        <h1 id="assoc-name" class="text-3xl font-bold"></h1>
-        <p id="assoc-en-name" class="text-sm mt-2"></p>
+    <header class="bg-gradient-to-r from-emerald-700 to-emerald-600 text-white py-8 text-center">
+        <div class="max-w-5xl mx-auto px-4">
+            <h1 id="assoc-name" class="text-3xl md:text-4xl font-bold"></h1>
+            <p id="assoc-en-name" class="text-sm mt-2 opacity-90"></p>
+            <p id="established" class="text-xs mt-3 bg-emerald-800 inline-block px-3 py-1 rounded-full"></p>
+        </div>
     </header>
 
     <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
-        <section>
-            <h2 class="text-xl font-semibold mb-4">درباره انجمن</h2>
-            <p id="description" class="mb-2"></p>
-            <p id="mission"></p>
+        <section class="bg-white p-6 rounded-xl shadow-sm">
+            <h2 class="text-2xl font-bold mb-4 text-emerald-700 border-b pb-2">درباره انجمن</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-semibold text-lg mb-1">معرفی</h3>
+                    <p id="description" class="text-justify leading-relaxed"></p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg mb-1">ماموریت</h3>
+                    <p id="mission" class="text-justify leading-relaxed"></p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg mb-1">چشم‌انداز</h3>
+                    <p id="vision" class="text-justify leading-relaxed"></p>
+                </div>
+            </div>
         </section>
 
         <section>
-            <h2 class="text-xl font-semibold mb-4">فعالیت‌های اخیر</h2>
-            <div id="recent-activities" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+            <h2 class="text-2xl font-bold mb-6 text-emerald-700">فعالیت‌ها</h2>
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4 border-b pb-2">اخیر</h3>
+                <div id="activities" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+            </div>
+            <div class="mt-10">
+                <h3 class="text-xl font-semibold mb-4 border-b pb-2">گذشته</h3>
+                <div id="past-events" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+            </div>
         </section>
 
         <section>
-            <h2 class="text-xl font-semibold mb-4">رویدادهای آینده</h2>
-            <div id="upcoming-events" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+            <h2 class="text-2xl font-bold mb-6 text-emerald-700">رویدادها</h2>
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4 border-b pb-2">آینده</h3>
+                <div id="upcoming-events" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+            </div>
         </section>
 
         <section>
-            <h2 class="text-xl font-semibold mb-4">اعضای انجمن</h2>
-            <div id="members" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+            <h2 class="text-2xl font-bold mb-6 text-emerald-700">اعضای انجمن</h2>
+            <div id="members" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"></div>
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold mb-4 border-b pb-2">مشاوران</h3>
+                <div id="advisors" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+            </div>
         </section>
 
-        <section>
-            <h2 class="text-xl font-semibold mb-4">راه‌های ارتباطی</h2>
-            <p><strong>آدرس:</strong> <span id="address"></span></p>
-            <p><strong>ایمیل:</strong> <span id="email"></span></p>
-            <p><strong>تلفن:</strong> <span id="phone"></span></p>
+        <section class="bg-white p-6 rounded-xl shadow-sm">
+            <h2 class="text-2xl font-bold mb-6 text-emerald-700">انتشارات</h2>
+            <div class="grid gap-6 sm:grid-cols-2">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">فصلنامه مطالعات اقتصادی</h3>
+                    <p class="text-gray-600">مجله تخصصی انجمن علمی اقتصاد دانشگاه زنجان</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">مقالات اخیر</h3>
+                    <ul id="recent-articles" class="list-disc pr-5 space-y-2"></ul>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2 class="text-xl font-semibold mb-4">شبکه‌های اجتماعی</h2>
-            <ul id="social-links" class="list-disc pr-5 space-y-1">
-                <li><a id="telegram" class="text-blue-600 hover:underline" target="_blank">تلگرام</a></li>
-                <li><a id="instagram" class="text-pink-600 hover:underline" target="_blank">اینستاگرام</a></li>
-                <li><a id="twitter" class="text-blue-400 hover:underline" target="_blank">توییتر</a></li>
-            </ul>
+        <section class="bg-white p-6 rounded-xl shadow-sm">
+            <h2 class="text-2xl font-bold mb-6 text-emerald-700">شرکای انجمن</h2>
+            <div id="partners" class="grid gap-4 sm:grid-cols-2 md:grid-cols-3"></div>
+        </section>
+
+        <section class="grid gap-8 md:grid-cols-2">
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <h2 class="text-2xl font-bold mb-6 text-emerald-700">راه‌های ارتباطی</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">آدرس</h3>
+                        <div id="address" class="text-gray-700 space-y-1"></div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">اطلاعات تماس</h3>
+                        <div class="text-gray-700 space-y-1">
+                            <p><i class="fas fa-envelope ml-2"></i> <span id="email"></span></p>
+                            <p><i class="fas fa-phone ml-2"></i> <span id="phone"></span></p>
+                            <p><i class="fas fa-fax ml-2"></i> <span id="fax"></span></p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">ساعات کاری</h3>
+                        <p id="office-hours" class="text-gray-700"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <h2 class="text-2xl font-bold mb-6 text-emerald-700">شبکه‌های اجتماعی</h2>
+                <div id="social-links" class="grid grid-cols-2 gap-4">
+                    <a id="telegram" class="social-link bg-blue-500" target="_blank">
+                        <i class="fab fa-telegram social-icon"></i>
+                        <span>تلگرام</span>
+                    </a>
+                    <a id="instagram" class="social-link bg-pink-600" target="_blank">
+                        <i class="fab fa-instagram social-icon"></i>
+                        <span>اینستاگرام</span>
+                    </a>
+                    <a id="twitter" class="social-link bg-blue-400" target="_blank">
+                        <i class="fab fa-twitter social-icon"></i>
+                        <span>توییتر</span>
+                    </a>
+                    <a id="linkedin" class="social-link bg-blue-700" target="_blank">
+                        <i class="fab fa-linkedin social-icon"></i>
+                        <span>لینکدین</span>
+                    </a>
+                </div>
+                <div class="mt-6">
+                    <h3 class="font-semibold text-lg mb-2">وبسایت رسمی</h3>
+                    <a id="website" class="text-blue-600 hover:underline" target="_blank"></a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer class="bg-gray-200 text-center text-sm py-4 mt-10">
-        <p>© 2025 انجمن علمی اقتصاد - دانشگاه زنجان</p>
+    <footer class="bg-gray-800 text-white text-center py-6 mt-12">
+        <div class="max-w-5xl mx-auto px-4">
+            <p class="mb-2">© ۱۴۰۴ انجمن علمی اقتصاد - دانشگاه زنجان</p>
+            <p class="text-sm text-gray-400">تمامی حقوق محفوظ است</p>
+        </div>
     </footer>
 
     <script>
         fetch("data.json")
             .then(res => res.json())
             .then(data => {
-                document.getElementById("assoc-name").textContent = data.associationName;
-                document.getElementById("assoc-en-name").textContent = data.englishName;
-                document.getElementById("description").textContent = data.description;
-                document.getElementById("mission").textContent = data.mission;
+                // Association Info
+                document.getElementById("assoc-name").textContent = data.association.name.persian;
+                document.getElementById("assoc-en-name").textContent = data.association.name.english;
+                document.getElementById("description").textContent = data.association.about.description;
+                document.getElementById("mission").textContent = data.association.about.mission;
+                document.getElementById("vision").textContent = data.association.about.vision;
+                document.getElementById("established").textContent = `تأسیس: ${data.association.about.established}`;
 
-                const recentContainer = document.getElementById("recent-activities");
-                data.recentActivities.forEach(act => {
+                // Activities
+                const activitiesContainer = document.getElementById("activities");
+                data.activities.forEach(act => {
                     const div = document.createElement("div");
-                    div.className = "bg-white p-4 rounded shadow";
-                    div.innerHTML = `<h3 class='font-bold text-lg mb-1'>${act.title}</h3><p class='text-sm text-gray-600'>${act.date}</p><p>${act.description}</p>`;
-                    recentContainer.appendChild(div);
+                    div.className = "activity-card bg-white p-5 rounded-lg shadow-md transition-all duration-300";
+                    let content = `
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class='font-bold text-lg'>${act.title}</h3>
+                            <span class='text-xs bg-emerald-100 text-emerald-800 px-2 py-1 rounded'>${act.type}</span>
+                        </div>
+                        <p class='text-sm text-gray-500 mb-3'>${act.date}</p>
+                        <p class='text-gray-700 mb-3'>${act.description}</p>`;
+
+                    if (act.participants) {
+                        content += `<p class='text-sm text-gray-500'><i class="fas fa-users ml-1"></i> ${act.participants} نفر</p>`;
+                    }
+                    if (act.instructor) {
+                        content += `<p class='text-sm text-gray-500 mt-2'><i class="fas fa-chalkboard-teacher ml-1"></i> ${act.instructor}</p>`;
+                    }
+                    div.innerHTML = content;
+                    activitiesContainer.appendChild(div);
                 });
 
+                // Events
                 const upcomingContainer = document.getElementById("upcoming-events");
-                data.upcomingEvents.forEach(evt => {
+                data.events.upcoming.forEach(evt => {
                     const div = document.createElement("div");
-                    div.className = "bg-white p-4 rounded shadow";
-                    let content = `<h3 class='font-bold text-lg mb-1'>${evt.title}</h3>`;
-                    if (evt.date) content += `<p class='text-sm text-gray-600'>${evt.date}</p>`;
-                    if (evt.speaker) content += `<p>سخنران: ${evt.speaker}</p>`;
-                    if (evt.deadline) content += `<p>مهلت: ${evt.deadline}</p>`;
+                    div.className = "event-card bg-white p-5 rounded-lg shadow-md transition-all duration-300";
+                    let content = `
+                        <h3 class='font-bold text-lg mb-2'>${evt.title}</h3>
+                        <p class='text-sm text-gray-500 mb-3 flex items-center'>
+                            <i class="far fa-calendar ml-1"></i> ${evt.date} ${evt.time ? `- ${evt.time}` : ''}
+                        </p>`;
+
+                    if (evt.speaker) {
+                        content += `<p class='text-sm mb-2'><i class="fas fa-microphone ml-1"></i> ${evt.speaker.name} (${evt.speaker.position})</p>`;
+                    }
+                    if (evt.location) {
+                        content += `<p class='text-sm mb-2'><i class="fas fa-map-marker-alt ml-1"></i> ${evt.location}</p>`;
+                    }
+                    if (evt.registration?.required) {
+                        content += `
+                            <div class="mt-4 pt-3 border-t border-gray-100">
+                                <p class="text-sm text-gray-500 mb-1"><i class="far fa-clock ml-1"></i> مهلت ثبت نام: ${evt.registration.deadline}</p>
+                                <a href="${evt.registration.link}" target="_blank" class="inline-block bg-emerald-600 text-white text-sm px-3 py-1 rounded hover:bg-emerald-700 transition">
+                                    ثبت نام <i class="fas fa-external-link-alt mr-1 text-xs"></i>
+                                </a>
+                            </div>`;
+                    }
                     div.innerHTML = content;
                     upcomingContainer.appendChild(div);
                 });
 
-                const membersContainer = document.getElementById("members");
-                data.members.forEach(member => {
+                // Past Events
+                const pastEventsContainer = document.getElementById("past-events");
+                data.events.past.forEach(evt => {
                     const div = document.createElement("div");
-                    div.className = "bg-white p-4 rounded shadow text-center";
-                    div.innerHTML = `<p class='font-semibold text-emerald-700'>${member.role}</p><p class='mt-1'>${member.name}</p>`;
+                    div.className = "event-card bg-white p-5 rounded-lg shadow-md transition-all duration-300";
+                    div.innerHTML = `
+                        <h3 class='font-bold text-lg mb-2'>${evt.title}</h3>
+                        <p class='text-sm text-gray-500 mb-2'><i class="far fa-calendar ml-1"></i> ${evt.date}</p>
+                        <p class='text-gray-700 text-sm'>${evt.summary}</p>
+                        <button class="mt-3 text-emerald-600 text-sm hover:underline">گزارش کامل</button>`;
+                    pastEventsContainer.appendChild(div);
+                });
+
+                // Members
+                const membersContainer = document.getElementById("members");
+                data.team.members.forEach(member => {
+                    const div = document.createElement("div");
+                    div.className = "member-card bg-white p-5 rounded-lg shadow-md text-center transition-all duration-300";
+                    let content = `
+                        <div class="h-16 w-16 bg-emerald-100 rounded-full mx-auto mb-3 flex items-center justify-center text-emerald-700">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <p class='font-semibold text-emerald-700'>${member.role}</p>
+                        <p class='mt-1 font-medium'>${member.name}</p>`;
+
+                    if (member.department) {
+                        content += `<p class='text-sm text-gray-500 mt-1'>${member.department}</p>`;
+                    }
+                    if (member.year) {
+                        content += `<p class='text-xs text-gray-400 mt-1'>${member.year}</p>`;
+                    }
+                    div.innerHTML = content;
                     membersContainer.appendChild(div);
                 });
 
-                document.getElementById("address").textContent = data.contact.address;
-                document.getElementById("email").textContent = data.contact.email;
-                document.getElementById("phone").textContent = data.contact.phone;
+                // Advisors
+                const advisorsContainer = document.getElementById("advisors");
+                data.team.advisors.forEach(advisor => {
+                    const div = document.createElement("div");
+                    div.className = "member-card bg-white p-5 rounded-lg shadow-md transition-all duration-300";
+                    div.innerHTML = `
+                        <div class="flex items-center">
+                            <div class="h-12 w-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 ml-3">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <p class='font-semibold'>${advisor.name}</p>
+                                <p class='text-sm text-gray-500'>${advisor.position}</p>
+                            </div>
+                        </div>`;
+                    advisorsContainer.appendChild(div);
+                });
 
-                document.getElementById("telegram").href = data.socialMedia.telegram;
-                document.getElementById("instagram").href = data.socialMedia.instagram;
-                document.getElementById("twitter").href = data.socialMedia.twitter;
+                // Recent Articles
+                const articlesContainer = document.getElementById("recent-articles");
+                data.publications.recentArticles.forEach(article => {
+                    const li = document.createElement("li");
+                    li.className = "text-gray-700";
+                    li.innerHTML = `<span class="font-medium">${article.title}</span> - ${article.author}`;
+                    articlesContainer.appendChild(li);
+                });
+
+                // Partners
+                const partnersContainer = document.getElementById("partners");
+                data.partners.forEach(partner => {
+                    const div = document.createElement("div");
+                    div.className = "bg-gray-50 p-4 rounded-lg border border-gray-200";
+                    div.innerHTML = `
+                        <p class="font-medium">${partner.name}</p>
+                        <p class="text-sm text-gray-500 mt-1">${partner.type}</p>`;
+                    partnersContainer.appendChild(div);
+                });
+
+                // Contact Info
+                const addressContainer = document.getElementById("address");
+                addressContainer.innerHTML = `
+                    <p><i class="fas fa-university ml-2"></i> ${data.contact.address.university}</p>
+                    <p><i class="fas fa-building ml-2"></i> ${data.contact.address.faculty}</p>
+                    <p><i class="fas fa-door-open ml-2"></i> ${data.contact.address.room}</p>`;
+
+                document.getElementById("email").textContent = data.contact.electronic.email;
+                document.getElementById("phone").textContent = data.contact.electronic.phone;
+                document.getElementById("fax").textContent = data.contact.electronic.fax;
+                document.getElementById("office-hours").textContent = data.contact.officeHours;
+                document.getElementById("website").textContent = data.contact.electronic.website;
+                document.getElementById("website").href = data.contact.electronic.website;
+
+                // Social Media
+                document.getElementById("telegram").href = data.contact.socialMedia.telegram.url;
+                document.getElementById("instagram").href = data.contact.socialMedia.instagram.url;
+                document.getElementById("twitter").href = data.contact.socialMedia.twitter.url;
+                document.getElementById("linkedin").href = data.contact.socialMedia.linkedin;
             });
     </script>
 </body>
