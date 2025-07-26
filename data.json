@@ -1,0 +1,44 @@
+{
+  "associationName": "انجمن علمی اقتصاد",
+  "englishName": "Scientific Economics Association",
+  "description": "انجمن علمی اقتصاد致力于促进经济学研究与发展，为学者、学生和专业人士提供交流平台。",
+  "mission": "我们的使命是推动经济学知识的传播，培养优秀经济人才，服务社会发展。",
+  "recentActivities": [
+    {
+      "title": "اقتصاد ایران در سال 1403",
+      "date": "1403/04/15",
+      "description": "بررسی تحولات اقتصادی ایران در سال جاری"
+    },
+    {
+      "title": "همایش بین‌المللی اقتصاد دیجیتال",
+      "date": "1403/03/22",
+      "description": "بررسی تأثیر فناوری‌های دیجیتال بر اقتصاد جهانی"
+    },
+    {
+      "title": "کارگاه روش‌های تحقیق کمی",
+      "date": "1403/02/30",
+      "description": "آموزش روش‌های پیشرفته تحلیل داده‌های اقتصادی"
+    }
+  ],
+  "upcomingEvents": [
+    {
+      "title": "سمینار سیاست‌های پولی",
+      "date": "1403/05/10",
+      "speaker": "دکتر احمدی"
+    },
+    {
+      "title": "مسابقه مقاله‌نویسی دانشجویی",
+      "deadline": "1403/05/30"
+    }
+  ],
+  "contact": {
+    "address": "تهران، خیابان انقلاب، دانشگاه تهران، دانشکده اقتصاد",
+    "email": "info@economics-association.ir",
+    "phone": "021-12345678"
+  },
+  "socialMedia": {
+    "telegram": "t.me/economics_assoc",
+    "instagram": "instagram.com/economics.assoc",
+    "twitter": "twitter.com/econ_assoc"
+  }
+}
