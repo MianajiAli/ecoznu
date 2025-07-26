@@ -1,6 +1,8 @@
 {
   "header": {
     "title": "انجمن علمی اقتصاد",
+    "color": "#1E40AF",
+    "logoImage": "/logo.png",
     "englishTitle": "Scientific Economics Association",
     "established": "۱۳۹۵",
     "navLinks": [
